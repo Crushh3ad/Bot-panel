@@ -1,0 +1,184 @@
+/* Globales Dark/Lila-Theme mit Animationen */
+:root {
+  --color-bg: #f8f9fb;
+  --color-bg-card: #fff;
+  --color-bg-card-glass: #fff;
+  --color-primary: #A259FF;
+  --color-primary-dark: #7C3AED;
+  --color-accent: #5D50FE;
+  --color-gradient: linear-gradient(135deg, #A259FF 0%, #5D50FE 100%);
+  --color-text: #23203A;
+  --color-text-muted: #8888aa;
+  --color-success: #4ADE80;
+  --color-danger: #F87171;
+  --color-warning: #FBBF24;
+  --shadow-card: 0 8px 32px rgba(80,40,120,0.08);
+  --radius: 20px;
+  --transition: all 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  background: #18122B;
+  color: var(--color-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  transition: var(--transition);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #18122B 0%, #23203A 100%);
+  animation: bgMove 16s ease-in-out infinite alternate;
+  opacity: 1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  z-index: 1;
+  top: -20%; left: -20%; width: 140vw; height: 140vh;
+  background: radial-gradient(circle at 20% 30%, #A259FF44 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #5D50FE33 0%, transparent 60%),
+              radial-gradient(circle at 60% 10%, #7C3AED33 0%, transparent 60%);
+  opacity: 0.7;
+  pointer-events: none;
+  animation: glowMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes glowMove {
+  0% { transform: scale(1) translate(0,0); }
+  100% { transform: scale(1.08) translate(40px, 30px); }
+}
+
+.card, .auth-container, .dashboard-container, .config-container, .terminal-container {
+  background: var(--color-bg-card-glass);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid #ececf6;
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary, .btn-accent {
+  background: var(--color-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(162,89,255,0.15);
+  transition: var(--transition);
+}
+.btn-primary:hover, .btn-accent:hover {
+  filter: brightness(1.08) drop-shadow(0 4px 16px #A259FF44);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.form-control, .form-select, input, textarea, select {
+  background: #fff;
+  color: #fff;
+  border: 2px solid #ececf6;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: var(--transition);
+}
+.form-control:focus, .form-select:focus, input:focus, textarea:focus, select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem #A259FF33;
+  background: #23203A;
+  color: #fff;
+}
+::placeholder {
+  color: #e0e0f0;
+  opacity: 1;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
+  background: var(--color-gradient);
+  color: #fff;
+  border: none;
+  transition: var(--transition);
+}
+
+.nav-tabs .nav-link {
+  color: var(--color-text-muted);
+  border: none;
+  border-radius: 12px 12px 0 0;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.alert-warning {
+  background: #A259FF22;
+  color: var(--color-warning);
+  border: none;
+}
+
+.alert-success {
+  background: #4ADE8022;
+  color: var(--color-success);
+  border: none;
+}
+
+.alert-danger {
+  background: #F8717122;
+  color: var(--color-danger);
+  border: none;
+}
+
+/* Animationen */
+.fade-in {
+  animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.btn, .card, .auth-container, .dashboard-container, .config-container, .terminal-container {
+  will-change: transform, box-shadow, filter;
+}
+
+/* Utility */
+.text-accent { color: var(--color-primary); }
+.bg-accent { background: var(--color-gradient) !important; color: #fff !important; }
+.shadow-accent { box-shadow: 0 4px 24px #A259FF33 !important; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #ececf6;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0e0f0;
+  border-radius: 8px;
+} 
+
+/* --- Notfall-Fix: Sichtbarkeit aller Hauptcontainer erzwingen --- */
+body,
+.container,
+.dashboard-card-flat,
+.dashboard-widget,
+.card,
+.fade-in,
+.auth-container,
+.dashboard-container,
+.config-container,
+.terminal-container {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+} 
+
+/* --- Notfall-Fix: Alles sichtbar machen --- */
+ 

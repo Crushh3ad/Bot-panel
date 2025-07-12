@@ -1,0 +1,11 @@
+-- SQLite ALTER TABLE für bestehende Tabelle 'bots'
+ALTER TABLE bots ADD COLUMN pid INTEGER; 
+
+-- Neue Tabelle für Bot-Sharing/Team-Bots
+CREATE TABLE IF NOT EXISTS bot_users (
+    bot_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    PRIMARY KEY (bot_id, user_id),
+    FOREIGN KEY (bot_id) REFERENCES bots(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+); 

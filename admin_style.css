@@ -1,0 +1,241 @@
+/* Admin-Panel Dark/Lila Theme */
+:root {
+  --admin-bg: #18122B;
+  --admin-bg-card: #23203A;
+  --admin-primary: #A259FF;
+  --admin-accent: #5D50FE;
+  --admin-text: #fff;
+  --admin-muted: #bdbde6;
+  --admin-success: #4ADE80;
+  --admin-danger: #F87171;
+  --admin-warning: #FBBF24;
+  --admin-radius: 16px;
+  --admin-shadow: 0 4px 16px #A259FF22, 0 1.5px 8px #5D50FE22;
+}
+
+body {
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  font-size: 15px;
+}
+
+.admin-section-card {
+  background: var(--admin-bg-card);
+  color: var(--admin-text);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow);
+  padding: 1.2rem 0.7rem 1rem 0.7rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  position: relative;
+  z-index: 2;
+}
+
+.admin-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--admin-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.admin-table {
+  background: transparent;
+  color: var(--admin-text);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.98rem;
+  box-shadow: 0 2px 16px #A259FF11;
+}
+.admin-table th {
+  background: var(--admin-bg-card);
+  color: var(--admin-primary);
+  font-weight: 600;
+  border: none;
+  font-size: 1em;
+}
+.admin-table td {
+  background: rgba(34,24,60,0.92);
+  border: none;
+  vertical-align: middle;
+  padding: 0.45em 0.7em;
+}
+.admin-table tr {
+  transition: background 0.18s;
+}
+.admin-table tr:hover {
+  background: #2d2550;
+}
+
+.admin-badge {
+  background: linear-gradient(90deg,#A259FF 0%,#5D50FE 100%);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.18em 0.7em;
+  font-size: 0.92em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #A259FF22;
+}
+.user-badge {
+  background: #23203A;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.18em 0.7em;
+  font-size: 0.92em;
+  font-weight: 600;
+}
+.otp-badge {
+  border-radius: 6px;
+  padding: 0.18em 0.7em;
+  font-size: 0.92em;
+  font-weight: 600;
+  background: #23203A;
+  color: #F87171;
+}
+.otp-badge.active {
+  background: #4ADE80;
+  color: #23203A;
+}
+
+.btn-admin-action, .btn, .btn-primary, .btn-accent {
+  font-size: 0.98em;
+  border-radius: 7px;
+  padding: 0.3em 0.9em;
+  margin-right: 0.15em;
+  margin-bottom: 0.1em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #A259FF22;
+  background: linear-gradient(135deg, #A259FF 0%, #5D50FE 100%);
+  color: #fff;
+  border: none;
+  transition: filter 0.15s, transform 0.15s;
+}
+.btn-admin-action:hover, .btn:hover, .btn-primary:hover, .btn-accent:hover {
+  filter: brightness(1.12) drop-shadow(0 4px 16px #A259FF44);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.admin-form-label {
+  color: var(--admin-primary);
+  font-weight: 600;
+  margin-bottom: 0.4em;
+}
+.admin-form-control, .form-control, .form-select, input, textarea, select {
+  background: #23203A;
+  color: #fff;
+  border: 2px solid #A259FF44;
+  border-radius: 7px;
+  padding: 0.5em 0.8em;
+  margin-bottom: 0.7em;
+  font-size: 0.98em;
+}
+.admin-form-control:focus, .form-control:focus, .form-select:focus, input:focus, textarea:focus, select:focus {
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 0.2rem #A259FF33;
+  background: #18122B;
+  color: #fff;
+}
+::placeholder {
+  color: #bdbde6;
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23203A;
+}
+::-webkit-scrollbar-thumb {
+  background: #A259FF33;
+  border-radius: 6px;
+}
+
+.admin-section-title,
+.admin-table,
+.admin-table th,
+.admin-table td,
+.admin-badge,
+.user-badge,
+.otp-badge,
+.btn,
+.btn-admin-action,
+.btn-primary,
+.btn-accent,
+label,
+.admin-form-label,
+.form-control,
+.form-select,
+input,
+textarea,
+select,
+.alert,
+.text-muted {
+  color: #fff !important;
+}
+
+/* Modal-Inputs immer editierbar */
+.modal-backdrop {
+  z-index: 1040 !important; /* Standardwert Bootstrap, liegt UNTER dem Modal */
+}
+.modal, .modal-content {
+  z-index: 1050 !important; /* Standardwert Bootstrap, liegt ÜBER dem Backdrop */
+}
+.modal, .modal-content, .modal-body, .modal input, .modal select, .modal textarea, .modal .form-control, .modal .admin-form-control {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  background: #23203A !important;
+  color: #fff !important;
+}
+
+/* --- Z-Index-Fix für Bootstrap-Modal: Modal immer über Backdrop --- */
+.modal-backdrop {
+  z-index: 1040 !important;
+  position: fixed !important;
+}
+.modal, .modal-dialog, .modal-content {
+  z-index: 1050 !important;
+  position: fixed !important;
+}
+
+/* Backdrop im Admin-Panel komplett deaktivieren */
+.modal-backdrop {
+  display: none !important;
+}
+
+/* Header-Menübereich auf Admin-Seite immer ganz oben */
+.d-flex.justify-content-between.align-items-center.mb-4 {
+  z-index: 2147483647 !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: var(--admin-bg-card, #23203A);
+  box-shadow: 0 4px 24px #A259FF22;
+  border-radius: 0 0 18px 18px;
+  padding: 1.2rem 2vw 1rem 2vw;
+}
+
+/* Abstand für darunterliegende Inhalte, damit nichts überlappt */
+.container-fluid.py-4 {
+  margin-top: 60px;
+}
+
+/* Weniger Abstand zwischen Line-Chart und Kreis-Charts */
+#botStatusChart, #botCategoryChart {
+  margin-top: 0 !important;
+}
+
+.row.mb-4 > div[style*="margin-top:1.5rem"] {
+  margin-top: 0.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .admin-section-card { padding: 0.7rem 0.2rem; }
+  .admin-section-title { font-size: 1rem; }
+  .admin-table { font-size: 0.92rem; }
+} 
