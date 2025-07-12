@@ -102,7 +102,10 @@ MIT License
    chmod 644 *.php
    ```
 4. **Stelle sicher:** PHP 7.4+, SQLite3, Webserver (Apache/Nginx) sind installiert und aktiviert
-5. **Datenbank wird automatisch beim ersten Start angelegt**
+5. **Setup ausführen:**
+   - Rufe im Browser `http://<dein-server>/setup.php` auf
+   - Folge den Anweisungen (Datenbank & Admin werden angelegt)
+   - **Lösche danach unbedingt die Datei `setup.php` aus dem Verzeichnis!**
 6. **Rufe die Seite im Browser auf**
    - Registriere den ersten Benutzer (dieser wird Admin)
    - (Optional) 2FA für Admins einrichten
