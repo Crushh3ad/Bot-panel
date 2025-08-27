@@ -23,8 +23,10 @@
 
 1. Dateien ins Webroot kopieren (z.B. `/var/www/html`)
 2. Prüfen: **PHP 7.4+**, **SQLite3**, Webserver (Apache/Nginx)
-3. Browser öffnen & ersten Benutzer registrieren
-4. Bots hinzufügen & loslegen!
+3. Browser öffnen & `setup.php` ausführen
+4. Admin-Daten im Setup setzen (Benutzername, E-Mail, Passwort)
+5. `setup.php` **unbedingt löschen**
+6. Bots hinzufügen & loslegen!
 
 [📦 Repository herunterladen](https://github.com/Crushh3ad/Bot-panel.git)
 
@@ -53,6 +55,7 @@ dateimanager.php       # Datei-Manager für Bots
 bots.db                # SQLite-Datenbank
 admin_style.css        # Admin-Panel Styles
 style_dark_lila.css    # Haupt-Styles
+setup.php              # Einmaliges Setup (Admin-Daten setzen!)
 ```
 
 ---
@@ -85,7 +88,7 @@ style_dark_lila.css    # Haupt-Styles
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Installation & Setup
 
 ```bash
 # Repository herunterladen
@@ -99,19 +102,20 @@ chmod 644 *.php
 
 1. Dateien ins Webroot kopieren (z.B. `/var/www/html`)
 2. PHP 7.4+, SQLite3 & Webserver aktiviert? ✔️
-3. Setup ausführen:
+3. Setup starten:
 
-   * Browser: `http://<dein-server>/setup.php`
-   * Anweisungen folgen (Datenbank & Admin werden erstellt)
-   * Danach **setup.php löschen**!
-4. Ersten Benutzer registrieren (Admin)
-5. Optional: 2FA für Admins aktivieren
-6. Bots hinzufügen & loslegen!
+   * Browser: `http://<dein-server>/setup.php` aufrufen
+   * **Admin-Daten im Setup eintragen:** Benutzername, E-Mail, Passwort
+   * Setup abschließen → `setup.php` **unbedingt löschen**!
+4. Seite im Browser aufrufen
+5. Bots hinzufügen & loslegen!
 
 **Windows-Hinweis:**
 
 * Dateien nach `C:\xampp\htdocs\Bot-panel` kopieren
 * PHP & SQLite3 im XAMPP Control Panel aktivieren
+* Browser: `http://localhost/Bot-panel/setup.php`
+* Admin-Daten setzen und Setup abschließen
 
 
 ## 📄 Lizenz
