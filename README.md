@@ -104,7 +104,7 @@ chmod 644 *.php
 2. PHP 7.4+, SQLite3 & Webserver aktiviert? ✔️
 3. Setup starten:
 
-  * **Admin-Daten in der setup.php eintragen:** Benutzername, E-Mail, Passwort
+  * **Admin-Daten in der → `setup.php` eintragen:** Benutzername, E-Mail, Passwort
    * Browser: `http://<dein-server>/setup.php` aufrufen
    * Setup abschließen → `setup.php` **unbedingt löschen**!
 4. Seite im Browser aufrufen
@@ -123,4 +123,5 @@ chmod 644 *.php
 MIT License
 
 Made with ❤️ für Discord Bot Teams
+
 
